@@ -876,6 +876,7 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 					}
 				}
 				else {
+					// 获取bean
 					getBean(beanName);
 				}
 			}
@@ -963,6 +964,8 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 				}
 			}
 			else {
+
+				// 1. 把beanDefinition 存入 beanDefinitionMap 中 2. 将benaName 存入 beanDefinitionNames
 				// Still in startup registration phase
 				this.beanDefinitionMap.put(beanName, beanDefinition);
 				this.beanDefinitionNames.add(beanName);

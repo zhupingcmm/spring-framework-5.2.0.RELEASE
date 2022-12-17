@@ -9,7 +9,7 @@ public class TestIoc {
 	public static void main(String[] args) {
 
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-		UserService userService = context.getBean(UserService.class);
+		UserService userService = context.getBean("userServiceImpl2", UserService.class);
 		User user = userService.getUserById(1);
 		System.out.println(user);
 	}
